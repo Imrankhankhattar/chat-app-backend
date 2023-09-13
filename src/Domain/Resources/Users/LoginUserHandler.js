@@ -6,11 +6,11 @@ class LoginUserHandler {
     }
 
     async execute(data) {
-        if (data.contact) {
-            if (data.otp) {
-            }
+        let userResp = await this.store.Users.verifyUser(data, true);
+        if (userResp) {
+            let loggedIn = await this.store.Users.login(data);
+            return loggedIn;
         }
-
     }
 }
 

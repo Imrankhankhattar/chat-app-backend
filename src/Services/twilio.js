@@ -12,7 +12,7 @@ const sendOtp = async (contact, OTP) => {
     from: '+1 980 295 2329',
     to: `${contact}`
   })
-    .then(message => console.log(message.sid)) 
+    .then(message => console.log(message.sid))
 }
 
 module.exports = sendOtp

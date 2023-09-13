@@ -1,5 +1,3 @@
-const redisClient = require('../../../Services/redis')
-
 class AddUserHandler {
     constructor(dataService) {
         this.store = dataService;
