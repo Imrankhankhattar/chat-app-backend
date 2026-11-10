@@ -1,4 +1,8 @@
 const express = require('express')
+
+//importing error handling function
+const errorhandler=require('./WebAPI/errorhandler')
+
 const app = express();
 const dotenv = require('dotenv')
 const webAPI = require("./WebAPI/user")
@@ -16,6 +20,9 @@ app.use((req,res,next)=>{
   next()
 })
 app.use('/users', webAPI);
+
+//catching  the error
+app.use(errorhandler);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
